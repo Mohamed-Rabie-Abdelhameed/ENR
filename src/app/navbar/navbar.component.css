@@ -1,0 +1,29 @@
+nav{
+    margin: 0;
+    padding: 0 10px 10px 15px;
+}
+button{
+    margin-right: 10px;
+}
+
+.nav-item{
+    font-size: 1.2em;    
+}
+
+#tickets{
+    background-color: #267461;
+    padding: 0 15px 0 15px;
+    font-weight: bold;
+    width: fit-content;
+    font-size: 1.2em;
+    border-radius: 25px;
+}
+
+#tickets a{
+    color: white;
+}
+
+#tickets:hover{
+    background-color: #1e5c4b;
+    cursor: pointer;
+}
