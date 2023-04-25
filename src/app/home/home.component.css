@@ -1,12 +1,8 @@
 .row {
-  /* border: 1px solid black; */
   width: 100%;
   margin: 0;
 }
 
-/* .row > *{
-    border: 1px solid black;
-} */
 
 .col-md-2 > h1,
 .col-md-8 > h1 {
@@ -25,7 +21,6 @@
 
 .col-md-2 > ul > li {
   padding: 10px;
-  /* border-bottom: 1px solid black; */
 }
 
 .col-md-2 > ul > li:hover {
@@ -41,6 +36,13 @@
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
   margin: 0;
 }
+
+.col-md-2 .card-body{
+    font-size: 1.3em;
+    font-weight: 400;
+    padding: 10px;
+}
+
 .col-md-4 .card {
     padding: 10px;
   background-color: #267461;
@@ -57,7 +59,7 @@
 }
 
 .col-md-4 .card-body{
-    font-size: 1.2em;
+    font-size: 1.3em;
     font-weight: 400;
     padding: 10px;
 }

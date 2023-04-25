@@ -1,0 +1,111 @@
+<div class="container">
+  <h1>Book Your Ticket</h1>
+  <mat-stepper
+    [linear]="isLinear"
+    class="stepper"
+    [orientation]="(stepperOrientation | async)!"
+  >
+    <mat-step [stepControl]="firstFormGroup" label="Fill out your name">
+      <form [formGroup]="firstFormGroup">
+        <mat-form-field appearance="fill">
+          <mat-label>Name</mat-label>
+          <input
+            matInput
+            placeholder="Last name, First name"
+            formControlName="firstCtrl"
+            required
+          />
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step
+      [stepControl]="secondFormGroup"
+      label="Choose your departure station"
+    >
+      <form [formGroup]="secondFormGroup">
+        <mat-form-field appearance="fill">
+          <mat-label>Departure</mat-label>
+          <mat-select formControlName="secondCtrl" required>
+            <mat-option *ngFor="let station of stations" [value]="station">
+              {{ station }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step
+      [stepControl]="thirdFormGroup"
+      label="Choose your arrival station"
+    >
+      <form [formGroup]="thirdFormGroup">
+        <mat-form-field appearance="fill">
+          <mat-label>Arrival</mat-label>
+          <mat-select formControlName="thirdCtrl" required>
+            <mat-option *ngFor="let station of stations" [value]="station">
+              {{ station }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="fourthFormGroup" label="Choose your train">
+      <form [formGroup]="fourthFormGroup">
+        <mat-form-field appearance="fill">
+          <mat-label>Train</mat-label>
+          <mat-select formControlName="fourthCtrl" required>
+            <mat-option value="Express">Express</mat-option>
+            <mat-option value="VIP">VIP</mat-option>
+            <mat-option value="Talgo">Talgo</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="fifthFormGroup" label="Choose your class">
+      <form [formGroup]="fifthFormGroup">
+        <mat-form-field appearance="fill">
+          <mat-label>Class</mat-label>
+          <mat-select formControlName="fifthCtrl" required>
+            <mat-option value="1st Class">1st Class</mat-option>
+            <mat-option value="2nd Class">2nd Class</mat-option>
+            <mat-option value="3rd Class">3rd Class</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Done</ng-template>
+      <h2>
+        Thank you for choosing ENR,
+        {{ getFirstName(firstFormGroup.value.firstCtrl) }}.
+      </h2>
+      <p>
+        Your <strong>{{ fourthFormGroup.value.fourthCtrl }}</strong
+        >/<strong>{{ fifthFormGroup.value.fifthCtrl }}</strong> ticket from
+        <strong>{{ secondFormGroup.value.secondCtrl }}</strong> to
+        <strong>{{ thirdFormGroup.value.thirdCtrl }}</strong> has been booked.
+      </p>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+      </div>
+    </mat-step>
+  </mat-stepper>
+</div>

@@ -16,5 +16,7 @@
 }
 
 .col-md-6 p {
+  font-size: 1.2rem;
+  letter-spacing: 1px;
  text-align: justify;
 }
