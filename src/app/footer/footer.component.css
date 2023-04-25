@@ -7,6 +7,9 @@
   background-color: #267461;
   color: #fff;
   padding: 10px;
+  background-image: url('/assets/images/logo copy.svg');
+  background-repeat: no-repeat;
+  background-position: right;
 }
 
 .footer h5 {
@@ -45,5 +48,5 @@
 }
 
 .footer a:hover {
-  color: #ccc;
+  color: #fda623;
 }
